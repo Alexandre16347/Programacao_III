@@ -1,0 +1,8 @@
+{
+    "name": "Feezer Point",
+    "version": "1.0.0",
+    "description": "Projeto do curso",
+    "main": "index.js",
+    "author": "Alexandre,Manoel e Brenne",
+    "license": "MIT"
+}

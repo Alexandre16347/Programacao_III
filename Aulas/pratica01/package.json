@@ -1,0 +1,17 @@
+{
+  "name": "pratica01",
+  "version": "1.0.0",
+  "description": "Projeto de CRUD alunos",
+  "main": "index.js",
+  "author": "Alexandre",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  }
+}
