@@ -1,20 +1,17 @@
-const express = require("express"); //import express
+import express from "express"
+import minhasRotas from "./rotas"
 
 const server = express();
+server.use(minhasRotas);
+
+
+server.listen(3333, (port = 3333) => {
+    // console.log("Servidor executado com sucesso", port);
+    console.log(`Servidor executado com sucesso na porta ${port} ${5555}`);
+});
 
 
 // function mensagemServidor(port){
 //     // console.log("Servidor executado com sucesso", port);
 //     console.log(`Servidor executado com sucess ${port} ${2222}`);
 // }
-
-server.get("/teste", (req, res) => {
-    console.log("Cliente acessou a rota teste");
-    return res.send("Olá Turma !");
-});
-
-
-server.listen(3333, (port = 3333) => {
-    // console.log("Servidor executado com sucesso", port);
-    console.log(`Servidor executado com sucess ${port} ${5555}`);
-});
