@@ -1,5 +1,7 @@
 /Aulas/pratica01/node_modules
 /Aulas/FreezerPoint/node_modules
+node_modules
 /Aulas/FreezerPoint/yarn.lock
 /Aulas/pratica01/yarn.lock
 /Aulas/yarn.lock
+yarn.lock
