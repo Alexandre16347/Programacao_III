@@ -4,9 +4,14 @@ import routes from "./rotas";
 class App {
     constructor() {
         this.server = express();
-        this.server.use(express.json());
+        this.middlewares();
         this.routes();
     }
+
+    middlewares() {
+        this.server.use(express.json());
+    }
+
     routes() {
         this.server.use(routes);
     }

@@ -1,8 +1,11 @@
+import { uuid } from "uuidv4"
+
 class Aluno {
-    constructor(nome, matricula, notas) {
+    constructor(nome, notas) {
         this.nome = nome;
-        this.matricula = matricula;
+        this.matricula = uuid();
         this.notas = notas;
+        this.media = this.calcularMedia();
     }
     calcularMedia() {
         var sum = 0;
@@ -11,6 +14,7 @@ class Aluno {
         }
         return sum / 3;
     }
+
 }
 
 export default Aluno;

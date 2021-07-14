@@ -1,9 +1,8 @@
 import { Router } from "express"
-import alunos from "./database";
 import alunoController from "./app/controller/alunoController"
+import idValido from "./app/middlewares/idValido"
 
 const routes = new Router();
-
 
 routes.get("/teste", (req, res) => {
     console.log("Cliente acessou a rota teste");
@@ -14,24 +13,14 @@ routes.get("/testeHTML", (req, res) => {
     return res.send("<h1>Teste</h1>");
 });
 
-routes.get("/aluno", (req, res) => {
-    return res.json(alunos);
-});
+routes.get("/aluno", alunoController.get);
 
-routes.get("/busca", (req, res) => {
-    const { nome } = req.query;
+routes.get("/busca", alunoController.busca);
 
-    const aluno = alunos.find(aluno => {
-        aluno == nome
-    });
-
-    return res.json(aluno);
-});
+routes.get("/buscaId", idValido, alunoController.buscaId);
 
 
-
-
-routes.post("/aluno", alunoController);
+routes.post("/aluno", alunoController.store);
 
 
 
@@ -39,11 +28,6 @@ routes.post("/aluno", alunoController);
 
 
 
-routes.put("/aluno/:id", (req, res) => {
-    const { nome } = req.body;
-    const { id } = req.params;
-    alunos[id] = nome;
-    return res.json(alunos);
-})
+routes.put("/aluno/:id", alunoController.update);
 
 export default routes;
